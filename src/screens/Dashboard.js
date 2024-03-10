@@ -1,12 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
   Button,
   SafeAreaView,
@@ -18,20 +10,16 @@ import {
   View,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import Rootstack from './src/components/Rootstack';
-import routes from './src/Navigation/routes';
-import Login from './src/screens/Login';
+import routes from '../Navigation/routes';
 
- 
-
-function App(): React.JSX.Element {
+const Dashboard = ()=>{
  const navigation= useNavigation();
- const onPress=()=>{
-  navigation.navigate(Rootstack.);
+ const goToLogin=()=>{
+  navigation.navigate(routes.LOGIN );
 }
   return (
     <View>
-      <Button title='Click me' onPress={()=>navigation.navigate(Login)}/>
+      <Button title='Click me' onPress={goToLogin}/>
     </View>
   );
 }
@@ -55,4 +43,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Dashboard;
